@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Class-Path: antlr.jar; asm.jar; cglib.jar; commons-collections.jar; co
+ mmons-logging.jar; dom4j.jar; hibernate.jar; hibernate-annotations.ja
+ r; hsqldb.jar; javax.annotation.jar; javax.ejb.jar; javax.jms.jar; ja
+ vax.persistence.jar; javax.resource.jar; javax.servlet.jar; javax.ser
+ vlet.jsp.jar; javax.servlet.jsp.jstl.jar; javax.transaction.jar;
+Main-Class: MainClass
+

@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LibsProcessing">
+    <output-path>$PROJECT_DIR$/out/artifacts/LibsProcessing</output-path>
+    <root id="archive" name="LibsProcessing.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="LibsProcessing" />
+      <element id="jpa-descriptors" facet="LibsProcessing/jpa/JPA" />
+      <element id="library" level="project" name="hibernate3" />
+      <element id="library" level="project" name="HSQLDB" />
+      <element id="library" level="project" name="Java EE 6" />
+    </root>
+  </artifact>
+</component>

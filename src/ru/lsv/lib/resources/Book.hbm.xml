@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding='utf-8'?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+      "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ru.lsv.lib.common.Book">
+        <id name="bookId" column="BOOK_ID">
+            <generator class="native"/>
+        </id>
+        <set name="authors" table="BOOK_AUTHORS">
+           <key column="BOOK_ID"/>
+           <many-to-many column="AUTHOR_ID" class="ru.lsv.lib.common.Author"/>
+        </set>        
+        <property name="id"/>
+        <property name="title"/>
+        <property name="genre"/>
+        <property name="language"/>
+        <property name="sourceLanguage"/>
+        <property name="serieName"/>
+        <property name="numInSerie"/>
+        <property name="zipFileName"/>
+    </class>
+</hibernate-mapping>
+
