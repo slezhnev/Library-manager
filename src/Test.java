@@ -32,12 +32,12 @@ public class Test {
         FB2ZipFileParser zfp = new FB2ZipFileParser();
         zfp.addListener(new FileParserListener() {
             @Override
-            public void filesCounted(int numFilesInZip) {
+            public void inArchiveFilesCounted(int numFilesInZip) {
                 System.out.println("Total files in zip: " + numFilesInZip);
             }
 
             @Override
-            public void fileProcessed(String fileName, Book book) {
+            public void inArchiveFileProcessed(String fileName, Book book) {
                 //System.out.println("--Loaded book from: " + fileName + "--\n" + book);
             }
         });

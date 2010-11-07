@@ -10,8 +10,6 @@ import ru.lsv.lib.parsers.FileParserListener;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -25,9 +23,9 @@ import java.util.List;
  */
 public class LibRusEcLibrary implements LibraryRealization {
     /**
-     * см. @ru.lsv.lib.library.LibraryRealization
+     * см. {@link ru.lsv.lib.library.LibraryRealization}
      *
-     * @return см. @ru.lsv.lib.library.LibraryRealization
+     * @return см. {@link ru.lsv.lib.library.LibraryRealization}
      */
     @Override
     public int IsNewBooksPresent() {
@@ -74,11 +72,12 @@ public class LibRusEcLibrary implements LibraryRealization {
     /**
      * см. @ru.lsv.lib.library.LibraryRealization
      *
-     * @param listener Листенер при обработке файлов. См @FileParserListener
-     * @return см. @ru.lsv.lib.library.LibraryRealization
+     * @param fileListener Листенер при обработке файлов. См {@link ru.lsv.lib.parsers.FileParserListener}
+     * @param diffListener Листенер при обработке архивов. См. {@link ru.lsv.lib.library.LibraryDiffListener}
+     * @return см. {@link ru.lsv.lib.library.LibraryRealization}
      */
     @Override
-    public int processNewBooks(FileParserListener listener) {
+    public int processNewBooks(LibraryDiffListener diffListener, FileParserListener fileListener) {
         // Поехали получать дифф
         List<String> newFiles = getFilesDiff();
         if (newFiles == null)
@@ -88,10 +87,12 @@ public class LibRusEcLibrary implements LibraryRealization {
         FB2ZipFileParser zipParser = new FB2ZipFileParser();
         // TODO Переделать листенера для отображения ОБЩЕГО процесса! А то сейчас будет отображаться только процесс внутри ОДНОГО зипа
         // TODO Тут же подумать - хорошо бы как-то сообщать список обработанных зипов. Или с вышенаписанным - сделать листенера для fail'ов
-        zipParser.addListener(listener);
+        zipParser.addListener(fileListener);
+        if (diffListener != null) diffListener.totalFilesInDiffCounted(newFiles.size());
         boolean hasFailed = false;
         for (String file : newFiles) {
             try {
+                if (diffListener != null) diffListener.beginNewFile(file);
                 // Формируем список книг
                 List<Book> books = zipParser.parseZipFile(library.getStoragePath() + File.separatorChar + file);
                 // Сохраняем

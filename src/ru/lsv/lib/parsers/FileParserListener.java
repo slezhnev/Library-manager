@@ -11,8 +11,8 @@ import ru.lsv.lib.common.Book;
  */
 public interface FileParserListener {
 
-    void filesCounted ( int numFilesInZip );
+    void inArchiveFilesCounted( int numFilesInZip );
 
-    void fileProcessed ( String fileName, Book book );
+    void inArchiveFileProcessed( String fileName, Book book );
 
 }

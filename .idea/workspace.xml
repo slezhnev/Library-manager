@@ -2,34 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="40401adb-c902-4c1c-a1bb-c3ab88ba6359" name="Default" comment="fix">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/library.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/HibernateUtil.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/HibernateUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/FileEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryRealization.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibRusEcLibrary.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibRusEcLibrary.java" />
+      <change type="DELETED" beforePath="H:\JavaProjects\Librarian\src\ru\lsv\lib\parsers\LibraryDiffParser.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test.java" afterPath="$PROJECT_DIR$/src/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
-      <change type="MOVED" beforePath="H:\JavaProjects\Librarian\src\ru\lsv\lib\parsers\ZipFileParser.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/File.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
-      <change type="DELETED" beforePath="H:\JavaProjects\Librarian\src\ru\lsv\lib\parsers\BookParser.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.lib/fb2-216642-221999.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibRusEcLibrary.java" />
-      <change type="DELETED" beforePath="H:\JavaProjects\Librarian\src\ru\lsv\lib\parsers\ZipFileParser.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Author.hbm.xml" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Author.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LibsProcessing.iml" afterPath="$PROJECT_DIR$/LibsProcessing.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryDiffListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryRealization.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryRealization.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FileParserListener.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FileParserListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java" />
     </list>
     <ignored path="$USER_HOME_GRIFFON$/" />
-    <ignored path=".idea/workspace.xml" />
     <ignored path="LibsProcessing.iws" />
+    <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,80 +87,7 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="LibraryUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="30" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HibernateUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/HibernateUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1161" selection-end="1265" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LibraryStorage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="96" selection-start="599" selection-end="659" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Library.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="77" selection-start="2786" selection-end="2786" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LibRusEcLibrary.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibRusEcLibrary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="75" selection-start="3917" selection-end="3917" vertical-scroll-proportion="0.5957194">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FB2ZipFileParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="28" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FB2BookParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="39" selection-start="4778" selection-end="4778" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LibraryRealization.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryRealization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="61" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -189,8 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryException.java" />
@@ -201,10 +111,12 @@
         <option value="$PROJECT_DIR$/src/library.cfg.xml" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryRealization.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FileParserListener.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryDiffListener.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibRusEcLibrary.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryRealization.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java" />
       </list>
     </option>
   </component>
@@ -257,6 +169,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -411,8 +325,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -445,7 +357,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="options.lastSelected" value="project.propSubversion" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -648,7 +560,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="10" width="1660" height="1010" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -658,12 +570,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13707165" sideWeight="0.6635945" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14080997" sideWeight="0.6624424" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959503" sideWeight="0.6624424" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -711,26 +623,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="57" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/LibraryDiffParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="86" selection-start="279" selection-end="893" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/FileEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="50" selection-start="172" selection-end="172" vertical-scroll-proportion="0.310219" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="8" selection-start="269" selection-end="269" vertical-scroll-proportion="0.24817519" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/library.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="71" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.0" />
@@ -741,54 +633,102 @@
         <state line="11" column="28" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FileParserListener.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="240" selection-end="240" vertical-scroll-proportion="0.2272175" />
+        <state line="42" column="0" selection-start="1161" selection-end="1265" vertical-scroll-proportion="0.76813316">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/FileEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.16171224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="237" selection-end="237" vertical-scroll-proportion="-3.2397094">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="-0.39476812" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="30" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/HibernateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1161" selection-end="1265" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="96" selection-start="599" selection-end="659" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="77" selection-start="2786" selection-end="2786" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="28" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="39" selection-start="4778" selection-end="4778" vertical-scroll-proportion="0.0" />
+        <state line="11" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="-1.1224732">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryRealization.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="61" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0" />
+        <state line="21" column="68" selection-start="563" selection-end="563" vertical-scroll-proportion="0.42449465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryDiffListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="173" selection-end="173" vertical-scroll-proportion="0.16171224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="263" selection-end="263" vertical-scroll-proportion="-2.1736028">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="93" selection-end="93" vertical-scroll-proportion="0.10107016">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FileParserListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="17" selection-start="240" selection-end="240" vertical-scroll-proportion="0.22235434">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="522" selection-end="522" vertical-scroll-proportion="-0.6373365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="74" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.5457788">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibRusEcLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="75" selection-start="3917" selection-end="3917" vertical-scroll-proportion="0.5957194">
+        <state line="23" column="13" selection-start="564" selection-end="564" vertical-scroll-proportion="0.090368606">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="226" selection-end="226" vertical-scroll-proportion="-0.40428063">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="239" selection-end="239" vertical-scroll-proportion="-1.9310344">
           <folding />
         </state>
       </provider>

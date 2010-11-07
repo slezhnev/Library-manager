@@ -53,11 +53,11 @@ public class FB2BookParser extends DefaultHandler {
     /**
      * См. @org.xml.sax.helpers.DefaultHandler
      *
-     * @param uri        См. @org.xml.sax.helpers.DefaultHandler
-     * @param localName  См. @org.xml.sax.helpers.DefaultHandler
-     * @param qName      См. @org.xml.sax.helpers.DefaultHandler
-     * @param attributes См. @org.xml.sax.helpers.DefaultHandler
-     * @throws SAXException См. @org.xml.sax.helpers.DefaultHandler
+     * @param uri        См. {@link org.xml.sax.helpers.DefaultHandler}
+     * @param localName  См. {@link org.xml.sax.helpers.DefaultHandler}
+     * @param qName      См. {@link org.xml.sax.helpers.DefaultHandler}
+     * @param attributes См. {@link org.xml.sax.helpers.DefaultHandler}
+     * @throws SAXException См. {@link org.xml.sax.helpers.DefaultHandler}
      */
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         tempVal = "";

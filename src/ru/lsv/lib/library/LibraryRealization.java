@@ -19,10 +19,11 @@ public interface LibraryRealization {
     /**
      * Добавление новых архивов в программу
      *
-     * @param listener Листенер при обработке файлов. См @FileParserListener
+     * @param diffListener Листенер при обработке diff'ов библиотеки
+     * @param fileListener Листенер при обработке файлов внутри архивов
      * @return 0 - если все прочитано удачно
      *         -1 - рухнуло что-то кардинально и нифига не было добавлено
      *         -2 - рухнуло что-то не кардинально и ВОЗМОЖНО что-то было добавлено
      */
-    public int processNewBooks(FileParserListener listener);
+    public int processNewBooks(LibraryDiffListener diffListener, FileParserListener fileListener);
 }

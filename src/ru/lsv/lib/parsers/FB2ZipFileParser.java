@@ -63,7 +63,7 @@ public class FB2ZipFileParser {
         }
         // Вызываем всех листенеров
         for (FileParserListener listener : listeners) {
-            listener.filesCounted(totalFiles);
+            listener.inArchiveFilesCounted(totalFiles);
         }
         // Поехали обрабатывать...
         ArrayList<Book> res = new ArrayList<Book>();
@@ -82,7 +82,7 @@ public class FB2ZipFileParser {
                     res.add(book);
                     // Поехали отфигарим по листенерам
                     for (FileParserListener listener : listeners) {
-                        listener.fileProcessed(name, book);
+                        listener.inArchiveFileProcessed(name, book);
                     }
                 } catch (SAXException e1) {
                     throw new ParseException(e1.getMessage(), 0);
