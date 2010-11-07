@@ -1,5 +1,8 @@
 package ru.lsv.lib.common;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Автор книги
  * User: lsv
@@ -8,18 +11,38 @@ package ru.lsv.lib.common;
  */
 public class Author {
 
-    private Integer authorId;
-    private String firstName;
-    private String middleName;
-    private String lastName;
+    public static final String PRIMARY_KEY = "AUTHOR_ID";
 
-    public Author() {        
+    /**
+     * Ключ при хранении
+     */
+    private Integer authorId;
+    /**
+     * Имя автора
+     */
+    private String firstName;
+    /**
+     * Отчество, может отсутствовать
+     */
+    private String middleName;
+    /**
+     * Фамилия
+     */
+    private String lastName;
+    /**
+     * Книги выбранного автора
+     */
+    private Set<Book> books;
+
+    public Author() {
+        books = new HashSet<Book>();
     }
 
-    public Author(String firstName, String middleName, String lastName) {
+    public Author(String firstName, String middleName, String lastName, Set<Book> books) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
+        this.books = books;
     }
 
     public String getFirstName() {
@@ -47,7 +70,7 @@ public class Author {
     }
 
     public String toString() {
-        return "firstName: "+firstName+"; middleName: "+middleName+"; lastName: "+lastName;
+        return "authorId :" + authorId + " firstName: " + firstName + "; middleName: " + middleName + "; lastName: " + lastName;
     }
 
     public Integer getAuthorId() {
@@ -56,5 +79,32 @@ public class Author {
 
     public void setAuthorId(Integer authorId) {
         this.authorId = authorId;
+    }
+
+    @Override
+    public boolean equals(Object some) {
+        if (some == null) return false;
+        if (this == some) return true;
+        if (!(some instanceof Author)) return false;
+        Author author = (Author) some;
+        return Utils.areEqual(author.firstName, author.firstName) &&
+                Utils.areEqual(author.middleName, author.middleName) &&
+                Utils.areEqual(author.lastName, author.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Utils.getHash(firstName) +
+                Utils.getHash(middleName) +
+                Utils.getHash(lastName);
+
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }

@@ -12,15 +12,16 @@
         <set name="authors" table="BOOK_AUTHORS">
            <key column="BOOK_ID"/>
            <many-to-many column="AUTHOR_ID" class="ru.lsv.lib.common.Author"/>
-        </set>        
+        </set>
         <property name="id"/>
-        <property name="title"/>
-        <property name="genre"/>
+        <property name="title" not-null="true"/>
+        <property name="genre" not-null="true"/>
         <property name="language"/>
         <property name="sourceLanguage"/>
         <property name="serieName"/>
         <property name="numInSerie"/>
-        <property name="zipFileName"/>
+        <property name="zipFileName" not-null="true"/>
+        <property name="crc32" not-null="true"/>
     </class>
 </hibernate-mapping>
 

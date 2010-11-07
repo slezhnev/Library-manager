@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Хранилище для книги 
+ * Хранилище для книги
  * User: lsv
  * Date: 20.10.2010
  * Time: 12:36:07
@@ -12,22 +12,59 @@ import java.util.Set;
  */
 public class Book {
 
+    public static final String PRIMARY_KEY = "BOOK_ID";
+
+    /**
+     * Ключ при хранении
+     */
     private Integer bookId;
-    private Integer id;
+    /**
+     * Имя файла этой книги в zipFileName
+     */
+    private String id;
+    /**
+     * Список авторов
+     */
     private Set<Author> authors;
+    /**
+     * Название
+     */
     private String title;
+    /**
+     * Жанр
+     */
     private String genre;
+    /**
+     * Язык
+     */
     private String language;
+    /**
+     * Исходный язык (для переводных книг)
+     */
     private String sourceLanguage;
+    /**
+     * Название серии (если есть)
+     */
     private String serieName;
+    /**
+     * Номер в серии (если есть)
+     */
     private Integer numInSerie;
+    /**
+     * Zip файл, где лежит книга
+     */
     private String zipFileName;
+    /**
+     * CRC32 книги. Нужно для устранения дублей в библиотеке
+     */
+    private Long crc32;
 
     public Book() {
         authors = new HashSet<Author>();
     }
 
-    public Book(String zipFileName, int _id, String title, String genre, String language, String sourceLanguage, String serieName, Integer numInSerie, HashSet<Author> authors, int id) {
+    public Book(String zipFileName, String _id, String title, String genre, String language, String sourceLanguage, String serieName, Integer numInSerie, HashSet<Author> authors, int id,
+                long crc32) {
         this.zipFileName = zipFileName;
         this.id = _id;
         this.title = title;
@@ -37,7 +74,7 @@ public class Book {
         this.serieName = serieName;
         this.numInSerie = numInSerie;
         this.authors = authors;
-        this.id = id;
+        this.crc32 = crc32;
     }
 
     public Set<Author> getAuthors() {
@@ -101,15 +138,15 @@ public class Book {
         for (Author author : authors) {
             S = S + author + "\n";
         }
-        return S + "title: "+title+"\ngenre: "+genre+"\nlang: "+language+"\nsrc-lang: "+sourceLanguage+"\nserieName: "+serieName+
-                "\nnumInSerie: "+numInSerie+"\nzipFile: "+zipFileName;
+        return S + "bookId: " + bookId + " id: " + id + " title: " + title + "\ngenre: " + genre + "\nlang: " + language + "\nsrc-lang: " + sourceLanguage + "\nserieName: " + serieName +
+                "\nnumInSerie: " + numInSerie + "\nzipFile: " + zipFileName + "\nCRC: " + crc32;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -128,5 +165,48 @@ public class Book {
     public void setBookId(Integer bookId) {
         this.bookId = bookId;
     }
+
+    public Long getCrc32() {
+        return crc32;
+    }
+
+    public void setCrc32(Long crc32) {
+        this.crc32 = crc32;
+    }
+
+    @Override
+    public int hashCode() {
+        return Utils.getHash(bookId) +
+                Utils.getHash(id) +
+                Utils.getHash(authors) +
+                Utils.getHash(title) +
+                Utils.getHash(genre) +
+                Utils.getHash(language) +
+                Utils.getHash(sourceLanguage) +
+                Utils.getHash(serieName) +
+                Utils.getHash(numInSerie) +
+                Utils.getHash(zipFileName) +
+                Utils.getHash(crc32);
+    }
+
+    @Override
+    public boolean equals(Object some) {
+        if (some == null) return false;
+        if (this == some) return true;
+        if (!(some instanceof Book)) return false;
+        Book book = (Book) some;
+        return Utils.areEqual(this.authors, book.authors) &&
+                Utils.areEqual(this.bookId, book.bookId) &&
+                Utils.areEqual(this.genre, book.genre) &&
+                Utils.areEqual(this.title, book.title) &&
+                Utils.areEqual(this.id, book.id) &&
+                Utils.areEqual(this.language, book.language) &&
+                Utils.areEqual(this.serieName, book.serieName) &&
+                Utils.areEqual(this.numInSerie, book.numInSerie) &&
+                Utils.areEqual(this.crc32, book.crc32) &&
+                Utils.areEqual(this.sourceLanguage, book.sourceLanguage) &&
+                Utils.areEqual(this.zipFileName, book.zipFileName);
+    }
+
 }
 
