@@ -1,5 +1,6 @@
 package ru.lsv.lib.common;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,13 +59,17 @@ public class Book {
      * CRC32 книги. Нужно для устранения дублей в библиотеке
      */
     private Long crc32;
+    /**
+     * Время добавления книги в библиотеку
+     */
+    private Date addTime; 
 
     public Book() {
         authors = new HashSet<Author>();
     }
 
     public Book(String zipFileName, String _id, String title, String genre, String language, String sourceLanguage, String serieName, Integer numInSerie, HashSet<Author> authors, int id,
-                long crc32) {
+                long crc32, Date addTime) {
         this.zipFileName = zipFileName;
         this.id = _id;
         this.title = title;
@@ -75,6 +80,7 @@ public class Book {
         this.numInSerie = numInSerie;
         this.authors = authors;
         this.crc32 = crc32;
+        this.addTime = addTime;
     }
 
     public Set<Author> getAuthors() {
@@ -208,5 +214,12 @@ public class Book {
                 Utils.areEqual(this.zipFileName, book.zipFileName);
     }
 
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
+    }
 }
 

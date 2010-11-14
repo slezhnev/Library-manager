@@ -71,8 +71,10 @@ public class LibraryStorage {
      * Добавление библиотеки. Если добавление прошло успешно - она становится активной.
      *
      * @param library Библиотека для добавления
-     * @return Добавленная библиотека или null, если библиотека с таким именем уже существует или
-     *         пытались добавить библиотеку с незаполненным полями
+     * @return Добавленная библиотека или null, если:
+     *         1. Библиотека с таким именем уже существует
+     *         2. Пытались добавить библиотеку с незаполненным полями
+     *         3. Не проходит .prepare у добавленной библиотеки
      * @throws org.hibernate.HibernateException
      *          В случае проблем работы с Hibernate. Для обработки снаружи в интерфейсе
      */
@@ -86,6 +88,10 @@ public class LibraryStorage {
             sess = getSession();
             List libs = sess.createQuery("from Library where name=?").setString(0, library.getName()).list();
             if (libs.size() != 0) {
+                sess.close();
+                return null;
+            } else if (library.prepare() != 0) {
+                sess.close();
                 return null;
             } else {
                 // А тут - сохраняем
@@ -93,8 +99,10 @@ public class LibraryStorage {
                 sess.save(library);
                 sess.flush();
                 trx.commit();
+                trx = null;
                 rebuildLibrariesList(sess);
                 sess.close();
+                sess = null;
                 // Выберем добавленную библиотеку
                 if (selectLibrary(library.getLibraryId()) != 0) {
                     throw new HibernateException("Добавленная библиотека не может быть выбрана в качестве текущей");

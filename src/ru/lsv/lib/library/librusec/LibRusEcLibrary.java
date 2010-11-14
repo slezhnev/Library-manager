@@ -1,19 +1,17 @@
-package ru.lsv.lib.library;
+package ru.lsv.lib.library.librusec;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import ru.lsv.lib.common.Book;
 import ru.lsv.lib.common.FileEntity;
+import ru.lsv.lib.library.*;
 import ru.lsv.lib.parsers.FB2ZipFileParser;
 import ru.lsv.lib.parsers.FileParserListener;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 /**
  * Реализация работы с библиотекой Либрусек
@@ -57,9 +55,13 @@ public class LibRusEcLibrary implements LibraryRealization {
         try {
             sess = library.openSession();
             List<FileEntity> libFiles = sess.createQuery("from FileEntity order by name").list();
-            for (FileEntity file : libFiles) {
-                if (!files.contains(file.getName())) {
-                    newFiles.add(file.getName());
+            if (libFiles.size() == 0) {
+                newFiles.addAll(files);
+            } else {
+                for (FileEntity file : libFiles) {
+                    if (!files.contains(file.getName())) {
+                        newFiles.add(file.getName());
+                    }
                 }
             }
         } catch (HibernateException ex) {
@@ -85,33 +87,41 @@ public class LibRusEcLibrary implements LibraryRealization {
         Library library = LibraryStorage.getSelectedLibrary();
         if (newFiles.size() == 0) return 0;// Ну а чего - разве не нормально прочиталось :)?
         FB2ZipFileParser zipParser = new FB2ZipFileParser();
-        // TODO Переделать листенера для отображения ОБЩЕГО процесса! А то сейчас будет отображаться только процесс внутри ОДНОГО зипа
-        // TODO Тут же подумать - хорошо бы как-то сообщать список обработанных зипов. Или с вышенаписанным - сделать листенера для fail'ов
-        zipParser.addListener(fileListener);
+        // fire listener
         if (diffListener != null) diffListener.totalFilesInDiffCounted(newFiles.size());
+        //
+        zipParser.addListener(fileListener);
         boolean hasFailed = false;
         for (String file : newFiles) {
             try {
+                // fire listener
                 if (diffListener != null) diffListener.beginNewFile(file);
                 // Формируем список книг
                 List<Book> books = zipParser.parseZipFile(library.getStoragePath() + File.separatorChar + file);
                 // Сохраняем
+                // Дата и время добавления. Для одного диффа - оно одинаково
+                Date addDate = new Date();
+                for (Book book : books) {
+                    // Установим дату обновления - и сохраним
+                    book.setAddTime(addDate);
+                    // Добавляем в библиотеку
+                    LibraryUtils.addBookToLibrary(book);
+                }
+                // Все обработалось. Надо бы, наверное, и файл в library сохранить
                 Session sess = library.openSession();
-                if (sess == null) return -2;
                 Transaction trx = null;
                 try {
                     trx = sess.beginTransaction();
-                    for (Book book : books) sess.save(book);
+                    sess.save(new FileEntity(file));
                     sess.flush();
                     trx.commit();
-                } catch (HibernateException e) {
+                } catch (HibernateException ex) {
                     if (trx != null) trx.rollback();
-                    hasFailed = true;
                 } finally {
                     sess.close();
                 }
             } catch (Exception e) {
-                // TODO Вот тут должен быть вызов листенера с тем, что все сдохло нафиг
+                if (diffListener != null) diffListener.fileProcessFailed(file, e.getMessage());
             }
         }
         return hasFailed ? -2 : 0;

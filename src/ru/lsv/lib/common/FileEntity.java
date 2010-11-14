@@ -13,6 +13,10 @@ public class FileEntity {
     private Integer id;
     private String name;
 
+    public FileEntity(String name) {
+        this.name = name;
+    }
+
     public FileEntity() {
         
     }

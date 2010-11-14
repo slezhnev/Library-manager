@@ -12,4 +12,6 @@ public interface LibraryDiffListener {
 
     void beginNewFile (String fileName);
 
+    void fileProcessFailed (String fileName, String msg);
+
 }

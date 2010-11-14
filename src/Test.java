@@ -1,14 +1,10 @@
-import org.hibernate.*;
-import org.hibernate.criterion.Restrictions;
-import ru.lsv.lib.common.Author;
+import org.hibernate.Session;
 import ru.lsv.lib.common.Book;
-import ru.lsv.lib.common.HibernateUtil;
-import ru.lsv.lib.library.LibraryUtils;
-import ru.lsv.lib.parsers.FB2ZipFileParser;
+import ru.lsv.lib.library.Library;
+import ru.lsv.lib.library.LibraryDiffListener;
+import ru.lsv.lib.library.LibraryStorage;
 import ru.lsv.lib.parsers.FileParserListener;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -22,82 +18,53 @@ public class Test {
 
     public static void main(String[] args) {
 
-//        Enumeration<Object> keys = FB2Genres.genres.keys();
-//
-//        while (keys.hasMoreElements()) {
-//            System.out.println(""+keys.nextElement());
-//        }
+        // Создадим Library одну для теста
+        Library library = new Library("LibRusEc local", "h:/javaprojects/librarian/test.lib", "h:/javaprojects/librarian/librusec.db", 1);
+        System.out.println("add result - " + LibraryStorage.addLibrary(library) + "\n");
 
-        //Transaction trx = sess.beginTransaction();
-        FB2ZipFileParser zfp = new FB2ZipFileParser();
-        zfp.addListener(new FileParserListener() {
-            @Override
-            public void inArchiveFilesCounted(int numFilesInZip) {
-                System.out.println("Total files in zip: " + numFilesInZip);
-            }
-
-            @Override
-            public void inArchiveFileProcessed(String fileName, Book book) {
-                //System.out.println("--Loaded book from: " + fileName + "--\n" + book);
-            }
-        });
-
-        List<Book> res = null;
-        try {
-            res = zfp.parseZipFile("H:\\JavaProjects\\Librarian\\test.lib\\fb2-216642-221999.zip");
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (ParseException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        List<Library> libraries = LibraryStorage.getLibraries();
+        for (Library library1 : libraries) {
+            System.out.println("" + library1 + "\n");
         }
 
-        if (res != null) {
-            System.out.println("" + res.size());
-            for (Book book : res) {
-                //sess.save(book);
-                LibraryUtils.addBookToLibrary(book);
-            }
+        if (LibraryStorage.selectLibrary(LibraryStorage.getLibraries().get(0).getLibraryId()) != 0) {
+            System.out.println("Library select failed!\n");
+            return;
         }
-        //sess.flush();
-        //trx.commit();
 
-        /*System.out.println("\n\nSaved books\n\n");
-        for (Object o : sess.createQuery("from Book").list()) {
-            System.out.println("" + o + "\n");
-        }*/
+        System.out.println("new books? : "+LibraryStorage.getSelectedLibrary().getLibraryRealization().IsNewBooksPresent()+"\n");
+        if (LibraryStorage.getSelectedLibrary().getLibraryRealization().IsNewBooksPresent() == 1) {
+            System.out.println("res of processing new : " + LibraryStorage.getSelectedLibrary().getLibraryRealization().processNewBooks(
+                    new LibraryDiffListener() {
+                        @Override
+                        public void totalFilesInDiffCounted(int totalFilesInDiff) {
+                            System.out.println ("total files in diff :"+totalFilesInDiff+"\n");
+                        }
 
-        Session sess = HibernateUtil.getSession();
-        Book firstBook = (Book) sess.createQuery("from Book").list().get(0);
-        System.out.println("" + firstBook);
+                        @Override
+                        public void beginNewFile(String fileName) {
+                            System.out.println("- processing new file : "+fileName+"\n");
+                        }
 
-        Criteria crit = sess.createCriteria(Book.class);
-        crit.add(Restrictions.eq("title", firstBook.getTitle()));
-        crit.add(Restrictions.eq("genre", firstBook.getGenre()));
-        crit.add(Restrictions.eq("crc32", firstBook.getCrc32()));
-        if ((firstBook.getSourceLanguage() != null) && (firstBook.getSourceLanguage().length() > 0)) {
-            crit.add(Restrictions.eq("sourceLanguage", firstBook.getSourceLanguage()));
+                        @Override
+                        public void fileProcessFailed(String fileName, String msg) {
+                            System.out.println("- FAILED to process file : "+fileName+", reason - "+msg+"\n");
+                        }
+                    },
+                    new FileParserListener() {
+                        @Override
+                        public void inArchiveFilesCounted(int numFilesInZip) {
+                            System.out.println("-- files in archive : "+numFilesInZip+"\n");
+                        }
+
+                        @Override
+                        public void inArchiveFileProcessed(String fileName, Book book) {
+                            System.out.println("--- processed in file "+fileName+" book - "+book);
+                        }
+                    }
+            ) + "\n");
         }
-        if ((firstBook.getLanguage() != null) && (firstBook.getLanguage().length() > 0)) {
-            crit.add(Restrictions.eq("language", firstBook.getLanguage()));
-        }
-        if ((firstBook.getSerieName() != null) && (firstBook.getSerieName().length() > 0)) {
-            crit.add(Restrictions.eq("serieName", firstBook.getSerieName()));
-            crit.add(Restrictions.eq("numInSerie", firstBook.getNumInSerie()));
-        }
-        for (Author author : firstBook.getAuthors()) {
-            System.out.println("\n authorId: "+author.getAuthorId());
-            crit.add(Restrictions.sqlRestriction("? = some(select " + Author.PRIMARY_KEY + " from BOOK_AUTHORS ba "+
-                                                 "where {alias}." + Book.PRIMARY_KEY + " = ba." + Book.PRIMARY_KEY + ")",
-                    author.getAuthorId(), Hibernate.INTEGER));
-        }
-        List books = crit.list();
-        if (books.size() > 0) {
-            System.out.println("\n\nFound:\n" + books.get(0));
-        } else {
-            System.out.println("\n\nNothing found");
-        }        
-        sess.createSQLQuery("SHUTDOWN");
-        sess.close();
+
     }
 
 }

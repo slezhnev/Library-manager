@@ -22,6 +22,7 @@
         <property name="numInSerie"/>
         <property name="zipFileName" not-null="true"/>
         <property name="crc32" not-null="true"/>
+        <property name="addTime" not-null="true"/>
     </class>
 </hibernate-mapping>
 

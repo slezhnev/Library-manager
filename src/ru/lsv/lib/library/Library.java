@@ -3,8 +3,12 @@ package ru.lsv.lib.library;
 import org.hibernate.*;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
+import ru.lsv.lib.library.librusec.LibRusEcLibrary;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 
 /**
  * Конкретная библиотека
@@ -116,9 +120,9 @@ public class Library {
      *         -4 - работа с таким типом библиотеки не поддерживается
      */
     public int prepare() {
-        Configuration conf = new AnnotationConfiguration().configure("library.cfg.xml");
-        // Поправим путь до базы
-        conf.setProperty("connection.url", conf.getProperty("connection.url").replace("%libdb%", dbPath));
+        Configuration conf = new Configuration().configure("ru/lsv/lib/resources/library.cfg.xml");
+        // Изменяем путь до базы
+        conf.setProperty("hibernate.connection.url", "jdbc:hsqldb:file:%libdb%;shutdown=true;hsqldb.default_table_type=cached".replace("%libdb%", dbPath));
         try {
             libraryFactory = conf.buildSessionFactory();
         } catch (HibernateException ex) {
@@ -161,5 +165,12 @@ public class Library {
 
     public LibraryRealization getLibraryRealization() {
         return libraryRealization;
+    }
+
+    @Override
+    public String toString() {
+        return "library: id="+libraryId+", name="+name+", storagePath=" +storagePath+
+                ", dbPath="+dbPath+", kind="+libraryKind+", initialized="+((libraryFactory == null) ? "no" : "yes")+
+                ", realizationClassName="+(libraryRealization == null ? "no" : libraryRealization.getClass().getName());
     }
 }
