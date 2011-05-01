@@ -54,7 +54,7 @@ public class FB2ZipFileParser {
      * @throws IOException              В случае проблем с чтением архива
      * @throws java.text.ParseException В случае, если возникают проболемы с парсингом имени файла в архиве или самой книги
      */
-    public List<Book> parseZipFile(String pathToFile) throws IOException, ParseException {
+    public List<Book> parseZipFile(String pathToFile) throws IOException , ParseException {
         ZipFile zip = new ZipFile(pathToFile);
         int totalFiles = 0;
         for (Enumeration e = zip.entries(); e.hasMoreElements();) {
@@ -79,15 +79,24 @@ public class FB2ZipFileParser {
                 try {
                     // Парсим книгу
                     Book book = bp.parseFB2Stream(zip.getInputStream(ze), id, fileName, ze.getCrc());
-                    res.add(book);
+                    if (book != null) res.add(book);
+                    else {
+                        for (FileParserListener listener : listeners) {
+                            listener.inArchiveFileParseFailed(name);
+                        }                        
+                    }
                     // Поехали отфигарим по листенерам
                     for (FileParserListener listener : listeners) {
                         listener.inArchiveFileProcessed(name, book);
                     }
                 } catch (SAXException e1) {
-                    throw new ParseException(e1.getMessage(), 0);
+                    for (FileParserListener listener : listeners) {
+                        listener.inArchiveFileParseFailed(name);
+                    }
                 } catch (ParserConfigurationException e1) {
-                    throw new ParseException(e1.getMessage(), 0);
+                    for (FileParserListener listener : listeners) {
+                        listener.inArchiveFileParseFailed(name);
+                    }
                 }
             }
         }

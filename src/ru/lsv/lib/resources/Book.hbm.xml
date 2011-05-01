@@ -5,14 +5,15 @@
       "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="ru.lsv.lib.common.Book">
+    <class name="ru.lsv.lib.common.Book" batch-size="50">
         <id name="bookId" column="BOOK_ID">
             <generator class="native"/>
         </id>
-        <set name="authors" table="BOOK_AUTHORS">
+        <!-- <set name="authors" table="BOOK_AUTHORS" lazy="true" batch-size="50"> -->
+        <bag name="authors" table="BOOK_AUTHORS" lazy="true" batch-size="50">
            <key column="BOOK_ID"/>
            <many-to-many column="AUTHOR_ID" class="ru.lsv.lib.common.Author"/>
-        </set>
+        </bag>
         <property name="id"/>
         <property name="title" not-null="true"/>
         <property name="genre" not-null="true"/>
@@ -23,6 +24,9 @@
         <property name="zipFileName" not-null="true"/>
         <property name="crc32" not-null="true"/>
         <property name="addTime" not-null="true"/>
+        <property name="annotation"/>
+        <property name="readed"/>
+        <property name="mustRead"/>
     </class>
 </hibernate-mapping>
 

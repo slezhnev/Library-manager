@@ -32,13 +32,15 @@ public class LibraryStorage {
     /**
      * Получение сессии работы с Hibernate
      *
-     * @return Сессия
+     * @return Сессия или null, если работа с сессией была завершена
      */
     private static Session getSession() {
-        Session sess = librarySessionFactory.openSession();
-        sess.setFlushMode(FlushMode.COMMIT);
-        sess.setCacheMode(CacheMode.NORMAL);
-        return sess;
+        if (librarySessionFactory != null) {
+            Session sess = librarySessionFactory.openSession();
+            sess.setFlushMode(FlushMode.COMMIT);
+            sess.setCacheMode(CacheMode.NORMAL);
+            return sess;
+        } else return null;
     }
 
     /**
@@ -133,6 +135,8 @@ public class LibraryStorage {
                     if (res != 0) {
                         return res;
                     }
+                    if (selectedLibrary != null)
+                        selectedLibrary.shutdownLibrary();
                     selectedLibrary = library;
                     selectedLibraryId = libraryId;
                 }
@@ -155,6 +159,24 @@ public class LibraryStorage {
             selectedLibraryId = -1;
         }*/
         return selectedLibrary;
+    }
+
+    /**
+     * Завершает работу с выбранной библиотекой
+     */
+    public static void shutdownSelectedLibrary() {
+        if (selectedLibrary != null) {
+            selectedLibrary.shutdownLibrary();
+            selectedLibrary = null;
+            selectedLibraryId = -1;
+        }
+    }
+
+    /**
+     * Завершает работу с объектом
+     */
+    public static void shutdownStorage() {
+        getSession().createSQLQuery("SHUTDOWN").executeUpdate();
     }
 
 }

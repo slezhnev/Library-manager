@@ -163,8 +163,20 @@ public class Library {
         return sess;
     }
 
+    /**
+     * Получение реализации библиотеки
+     * @return Реализация
+     */
     public LibraryRealization getLibraryRealization() {
         return libraryRealization;
+    }
+
+    /**
+     * Завершает работу с библиотекой.
+     * Без завершения - данные могут быть не сохранены
+     */
+    public void shutdownLibrary() {
+        openSession().createSQLQuery("SHUTDOWN").executeUpdate();
     }
 
     @Override

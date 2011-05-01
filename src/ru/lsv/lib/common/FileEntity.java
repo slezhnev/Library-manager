@@ -12,13 +12,20 @@ public class FileEntity {
 
     private Integer id;
     private String name;
+    private Long size;
 
-    public FileEntity(String name) {
+    public FileEntity(String name, Long size) {
         this.name = name;
+        this.size = size;
     }
 
     public FileEntity() {
         
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 
     public Integer getId() {
@@ -35,5 +42,13 @@ public class FileEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
     }
 }

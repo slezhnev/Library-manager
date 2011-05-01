@@ -1,6 +1,7 @@
 package ru.lsv.lib.parsers;
 
 import org.xml.sax.Attributes;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import ru.lsv.lib.common.Author;
@@ -10,8 +11,7 @@ import ru.lsv.lib.library.LibraryUtils;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Парсер fb2-книг из потока
@@ -19,6 +19,7 @@ import java.io.InputStream;
  * Date: 20.10.2010
  * Time: 12:35:13
  */
+@SuppressWarnings({"HardCodedStringLiteral"})
 public class FB2BookParser extends DefaultHandler {
 
     private String tempVal;
@@ -39,9 +40,29 @@ public class FB2BookParser extends DefaultHandler {
      * @throws IOException                  В случае проблем чтения из потока
      */
     public Book parseFB2Stream(InputStream inStream, String id, String zipFileName, long crc32) throws SAXException, ParserConfigurationException, IOException {
+        // Вначале читаем все в StringBuffer. Читаем ВСЕ до </description>
+        /*BufferedReader reader = new BufferedReader(new InputStreamReader(inStream));
+        StringBuffer str = new StringBuffer();
+        String desc = "</description>";
+        while (inStream.available() > 0) {
+            String inStr = reader.readLine();
+            int pos = inStr.toLowerCase().indexOf(desc);
+            if (pos > -1) {
+                str.append(str.substring(0, pos + desc.length()));
+            } else {
+                str.append(inStr);
+            }
+        }
+        str.append("</FictionBook>");*/
+        //
         SAXParserFactory spf = SAXParserFactory.newInstance();
         SAXParser parser = spf.newSAXParser();
-        parser.parse(inStream, this);
+        try {
+            parser.parse(inStream, this);
+        } catch (SAXException ex) {
+            int i = 0;
+        }
+        //parser.parse(new InputSource(new StringReader(str.toString())), this);
         if (retBook != null) {
             retBook.setId(id);
             retBook.setZipFileName(zipFileName);
@@ -92,9 +113,10 @@ public class FB2BookParser extends DefaultHandler {
 
     /**
      * См. @org.xml.sax.helpers.DefaultHandler
-     * @param uri См. @org.xml.sax.helpers.DefaultHandler
+     *
+     * @param uri       См. @org.xml.sax.helpers.DefaultHandler
      * @param localName См. @org.xml.sax.helpers.DefaultHandler
-     * @param qName См. @org.xml.sax.helpers.DefaultHandler
+     * @param qName     См. @org.xml.sax.helpers.DefaultHandler
      * @throws SAXException См. @org.xml.sax.helpers.DefaultHandler
      */
     public void endElement(String uri, String localName, String qName) throws SAXException {
@@ -122,6 +144,8 @@ public class FB2BookParser extends DefaultHandler {
             if (tempBook != null) tempBook.setLanguage(tempVal);
         } else if (qName.equalsIgnoreCase("src-lang")) {
             if (tempBook != null) tempBook.setSourceLanguage(tempVal);
+        } else if (qName.equalsIgnoreCase("annotation")) {
+            if (tempBook != null) tempBook.setAnnotation(tempVal);
         }
 
     }

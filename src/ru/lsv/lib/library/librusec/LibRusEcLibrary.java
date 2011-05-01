@@ -50,17 +50,17 @@ public class LibRusEcLibrary implements LibraryRealization {
                 return name.endsWith(".zip");
             }
         });
-        HashSet<String> files = new HashSet<String>(Arrays.asList(fileArray));
+        //TreeSet<String> files = new TreeSet<String>(Arrays.asList(fileArray));
         Session sess = null;
         try {
             sess = library.openSession();
-            List<FileEntity> libFiles = sess.createQuery("from FileEntity order by name").list();
+            TreeSet<String> libFiles = new TreeSet<String>(sess.createQuery("select name from FileEntity order by name").list());
             if (libFiles.size() == 0) {
-                newFiles.addAll(files);
+                newFiles.addAll(Arrays.asList(fileArray));
             } else {
-                for (FileEntity file : libFiles) {
-                    if (!files.contains(file.getName())) {
-                        newFiles.add(file.getName());
+                for (String file : fileArray) {
+                    if (!libFiles.contains(file)) {
+                        newFiles.add(file);
                     }
                 }
             }
@@ -97,9 +97,11 @@ public class LibRusEcLibrary implements LibraryRealization {
                 // fire listener
                 if (diffListener != null) diffListener.beginNewFile(file);
                 // Формируем список книг
+                File fl = new File(library.getStoragePath() + File.separatorChar + file);
                 List<Book> books = zipParser.parseZipFile(library.getStoragePath() + File.separatorChar + file);
                 // Сохраняем
                 // Дата и время добавления. Для одного диффа - оно одинаково
+                if (diffListener != null) diffListener.fileProcessSavingBooks(file);
                 Date addDate = new Date();
                 for (Book book : books) {
                     // Установим дату обновления - и сохраним
@@ -112,7 +114,7 @@ public class LibRusEcLibrary implements LibraryRealization {
                 Transaction trx = null;
                 try {
                     trx = sess.beginTransaction();
-                    sess.save(new FileEntity(file));
+                    sess.save(new FileEntity(file, fl.length()));
                     sess.flush();
                     trx.commit();
                 } catch (HibernateException ex) {

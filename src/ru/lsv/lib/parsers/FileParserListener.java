@@ -15,4 +15,5 @@ public interface FileParserListener {
 
     void inArchiveFileProcessed( String fileName, Book book );
 
+    void inArchiveFileParseFailed ( String fileName );
 }

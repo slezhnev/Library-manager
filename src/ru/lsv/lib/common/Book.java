@@ -1,8 +1,6 @@
 package ru.lsv.lib.common;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Хранилище для книги
@@ -26,7 +24,7 @@ public class Book {
     /**
      * Список авторов
      */
-    private Set<Author> authors;
+    private List<Author> authors;
     /**
      * Название
      */
@@ -62,32 +60,33 @@ public class Book {
     /**
      * Время добавления книги в библиотеку
      */
-    private Date addTime; 
+    private Date addTime;
+
+    /**
+     * Аннотация к книге
+     */
+    private String annotation;
+
+    /**
+     * Отметка о том, что книга прочитана
+     */
+    private Boolean readed;
+
+    /**
+     * Отметка о том, что книгу неплохо было бы прочитать
+     */
+    private Boolean mustRead;
+
 
     public Book() {
-        authors = new HashSet<Author>();
+        authors = new ArrayList<Author>();
     }
 
-    public Book(String zipFileName, String _id, String title, String genre, String language, String sourceLanguage, String serieName, Integer numInSerie, HashSet<Author> authors, int id,
-                long crc32, Date addTime) {
-        this.zipFileName = zipFileName;
-        this.id = _id;
-        this.title = title;
-        this.genre = genre;
-        this.language = language;
-        this.sourceLanguage = sourceLanguage;
-        this.serieName = serieName;
-        this.numInSerie = numInSerie;
-        this.authors = authors;
-        this.crc32 = crc32;
-        this.addTime = addTime;
-    }
-
-    public Set<Author> getAuthors() {
+    public List<Author> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(Set<Author> authors) {
+    public void setAuthors(List<Author> authors) {
         this.authors = authors;
     }
 
@@ -139,13 +138,50 @@ public class Book {
         this.numInSerie = numInSerie;
     }
 
-    public String toString() {
+    public String formHTMLDescription() {
+        StringBuffer str = new StringBuffer("<html><b>Название:</b><br>");
+        if (title == null) str.append("Нет названия");
+        else str.append(title);
+        str.append("<br><br>");
+        str.append("<b>Авторы</b>:<br>");
+        for (Author author : authors) {
+            str.append(author.makeName()).append("<br>");
+        }
+        str.append("<br><br>");
+        if (serieName != null) {
+            str.append("<b>Серия:</b><br>").append(serieName);
+            str.append(" - ");
+            if (numInSerie == null) str.append("б/н");
+            else str.append(numInSerie);
+            str.append("<br><br>");
+        }
+        str.append("<b>Архив:</b><br>").append(zipFileName).append("<br><br>");
+        str.append("<b>Имя файла:</b><br>").append(id);
+        return str.toString();
+    }
+
+    public String toLongString() {
         String S = "authors:\n";
         for (Author author : authors) {
             S = S + author + "\n";
         }
         return S + "bookId: " + bookId + " id: " + id + " title: " + title + "\ngenre: " + genre + "\nlang: " + language + "\nsrc-lang: " + sourceLanguage + "\nserieName: " + serieName +
                 "\nnumInSerie: " + numInSerie + "\nzipFile: " + zipFileName + "\nCRC: " + crc32;
+    }
+
+    public String toString() {
+        StringBuffer str = new StringBuffer();
+        if (title == null) str.append("Нет названия");
+        else str.append(title);
+        if (serieName != null) {
+            str.append(" (").append(serieName).append(" - ");
+            if (numInSerie != null)
+                str.append(numInSerie);
+            else
+                str.append("б/н");
+            str.append(")");
+        }
+        return str.toString();
     }
 
     public String getId() {
@@ -220,6 +256,30 @@ public class Book {
 
     public void setAddTime(Date addTime) {
         this.addTime = addTime;
+    }
+
+    public String getAnnotation() {
+        return annotation;
+    }
+
+    public void setAnnotation(String annotation) {
+        this.annotation = annotation;
+    }
+
+    public Boolean getReaded() {
+        return readed;
+    }
+
+    public void setReaded(Boolean readed) {
+        this.readed = readed;
+    }
+
+    public Boolean getMustRead() {
+        return mustRead;
+    }
+
+    public void setMustRead(Boolean mustRead) {
+        this.mustRead = mustRead;
     }
 }
 

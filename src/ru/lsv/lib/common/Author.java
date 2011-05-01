@@ -1,6 +1,8 @@
 package ru.lsv.lib.common;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -32,13 +34,13 @@ public class Author {
     /**
      * Книги выбранного автора
      */
-    private Set<Book> books;
+    private List<Book> books;
 
     public Author() {
-        books = new HashSet<Book>();
+        books = new ArrayList<Book>();
     }
 
-    public Author(String firstName, String middleName, String lastName, Set<Book> books) {
+    public Author(String firstName, String middleName, String lastName, List<Book> books) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -100,11 +102,25 @@ public class Author {
 
     }
 
-    public Set<Book> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(Set<Book> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    /**
+     * Обрабатывает и создает имя автора
+     * @return Сформированное имя без "null"
+     */
+    public String makeName() {
+        StringBuffer str = new StringBuffer();
+        if (lastName != null) str.append(lastName);
+        str.append(" ");
+        if (firstName != null) str.append(firstName);
+        str.append(" ");
+        if (middleName != null) str.append(middleName);
+        return str.toString();
     }
 }

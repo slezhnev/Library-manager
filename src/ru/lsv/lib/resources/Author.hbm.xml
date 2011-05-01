@@ -12,10 +12,10 @@
         <property name="firstName"/>
         <property name="middleName"/>
         <property name="lastName"/>
-        <set name="books" inverse="true" table="BOOK_AUTHORS">
+        <bag name="books" inverse="true" table="BOOK_AUTHORS">
            <key column="AUTHOR_ID"/>
            <many-to-many column="BOOK_ID" class="ru.lsv.lib.common.Book"/>
-        </set>
+        </bag>
     </class>
 </hibernate-mapping>
 

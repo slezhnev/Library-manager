@@ -6,6 +6,7 @@
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" />
           <unit-entry name="library.cfg.xml" />
+          <unit-entry name="ru:lsv:lib:resources:library.cfg.xml" />
         </datasource-map>
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/ru/lsv/lib/resources/library.cfg.xml" />
@@ -32,6 +33,9 @@
     <orderEntry type="library" name="hibernate3" level="project" />
     <orderEntry type="library" name="HSQLDB" level="project" />
     <orderEntry type="library" name="Java EE 6" level="project" />
+    <orderEntry type="library" name="JGoodies Looks" level="project" />
+    <orderEntry type="library" name="JGoodies Forms" level="project" />
+    <orderEntry type="library" name="Apache Commons Lang 2.6" level="project" />
   </component>
 </module>
 

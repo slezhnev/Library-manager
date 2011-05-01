@@ -10,6 +10,7 @@
             <generator class="native"/>
         </id>
         <property name="name"/>
+        <property name="size"/>
     </class>
 </hibernate-mapping>
 

@@ -10,6 +10,8 @@
       <element id="library" level="project" name="hibernate3" />
       <element id="library" level="project" name="HSQLDB" />
       <element id="library" level="project" name="Java EE 6" />
+      <element id="library" level="project" name="JGoodies Looks" />
+      <element id="library" level="project" name="JGoodies Forms" />
     </root>
   </artifact>
 </component>
