@@ -112,6 +112,7 @@ public class Author {
 
     /**
      * Обрабатывает и создает имя автора
+     *
      * @return Сформированное имя без "null"
      */
     public String makeName() {
@@ -121,6 +122,7 @@ public class Author {
         if (firstName != null) str.append(firstName);
         str.append(" ");
         if (middleName != null) str.append(middleName);
-        return str.toString();
+        return str.toString().trim();
     }
+
 }

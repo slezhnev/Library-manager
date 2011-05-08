@@ -24,7 +24,7 @@
         <property name="zipFileName" not-null="true"/>
         <property name="crc32" not-null="true"/>
         <property name="addTime" not-null="true"/>
-        <property name="annotation"/>
+        <property name="annotation" length="65000"/>
         <property name="readed"/>
         <property name="mustRead"/>
     </class>

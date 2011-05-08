@@ -1,6 +1,7 @@
 package ru.lsv.lib.ui;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import ru.lsv.lib.common.Author;
 import ru.lsv.lib.common.Book;
 import ru.lsv.lib.library.Library;
@@ -10,15 +11,13 @@ import ru.lsv.lib.parsers.MHLUDParser;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeSelectionModel;
+import javax.swing.tree.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
@@ -52,6 +51,7 @@ public class MainForm implements ActionListener {
     private static final String loadReadedListFromMyHomeLibMIText = "Загрузить список прочитанного из MyHomeLib";
     private static final String markAsReadedMIText = "Отметить/снять отметку 'Прочитанное'";
     private static final String markAsMustReadMIText = "Отметить/снять отметку 'К прочтению'";
+    private static final String copyToDeviceMIText = "Копировать для чтения";
 
     public MainForm() {
         authorEdit.addActionListener(new ActionListener() {
@@ -285,7 +285,6 @@ public class MainForm implements ActionListener {
         //
         authorsList.setModel(new AuthorListModel());
         seriesList.setModel(new StringsListModel());
-        booksTree.getSelectionModel().setSelectionMode(TreeSelectionModel.CONTIGUOUS_TREE_SELECTION);
         //
         //mainFrame.pack();
         mainFrame.setBounds(0, 0, 1024, 800);
@@ -296,6 +295,7 @@ public class MainForm implements ActionListener {
         //filterBooks();
         booksTree.setCellRenderer(new BookTreeCellRenderer());
         ((DefaultTreeModel) booksTree.getModel()).setRoot(new DefaultMutableTreeNode("root"));
+        booksTree.getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
         //
         mainFrame.setVisible(true);
         return mainFrame;
@@ -398,6 +398,11 @@ public class MainForm implements ActionListener {
         item.setAccelerator(KeyStroke.getKeyStroke("ctrl P"));
         item.addActionListener(this);
         menu.add(item);
+        menu.addSeparator();
+        item = new JMenuItem(copyToDeviceMIText);
+        item.setAccelerator(KeyStroke.getKeyStroke("ctrl D"));
+        item.addActionListener(this);
+        menu.add(item);
         //
         menuBar.add(menu);
         //
@@ -415,12 +420,57 @@ public class MainForm implements ActionListener {
         } else if (loadReadedListFromMyHomeLibMIText.equals(e.getActionCommand())) {
             doLoadReadedFromMyHomeLib();
         } else if (markAsReadedMIText.equals(e.getActionCommand())) {
-            doMarkAsRead();
+            doMarkAsRead(true);
         } else if (markAsMustReadMIText.equals(e.getActionCommand())) {
             doMarkAsMustRead();
         } else if ((filterOnlyNewMI.getText().equals(e.getActionCommand())) ||
                 (filterOnlyMustReadMI.getText().equals(e.getActionCommand()))) {
             filterByCategory();
+        } else if (copyToDeviceMIText.equals(e.getActionCommand())) {
+            doCopyToDevice();
+        }
+    }
+
+    /**
+     * Копирует выбранные книги куда-нито
+     * <p/>
+     * Формат копирования - fb2.zip
+     * Куда копировать - будет спрошено
+     * Дополнительно будет спрошено - отмечать ли скопированные книги как прочитанные
+     */
+    private void doCopyToDevice() {
+        if (LibraryStorage.getSelectedLibrary() == null) {
+            JOptionPane.showMessageDialog(mainPanel, "Не выбрана библиотека для работы", "Экспорт книг", JOptionPane.ERROR_MESSAGE);
+        } else {
+            TreePath[] selection = booksTree.getSelectionPaths();
+            if ((selection != null) && (selection.length > 0)) {
+                // Сформируем список книг для экспорта
+                Session sess = null;
+                mainPanel.setCursor(waitCursor);
+                ArrayList<Book> books = new ArrayList<Book>();
+                try {
+                    sess = LibraryStorage.getSelectedLibrary().openSession();
+                    for (TreePath el : selection) {
+                        if (DefaultMutableTreeNode.class.equals(el.getLastPathComponent().getClass())) {
+                            if (Book.class.equals(((DefaultMutableTreeNode) el.getLastPathComponent()).getUserObject().getClass())) {
+                                // Загрузим книгу полностью!
+                                Book book = (Book) sess.get(Book.class, ((Book) ((DefaultMutableTreeNode) el.getLastPathComponent()).getUserObject()).getBookId());
+                                if (book.getAuthors() != null) {
+                                    int makeLazyInitialization = book.getAuthors().size();
+                                }
+                                books.add(book);
+                            }
+                        }
+                    }
+                } finally {
+                    sess.close();
+                    mainPanel.setCursor(defCursor);
+                }
+                ExportForm export = new ExportForm(mainFrame, books);
+                if (export.doExport(mainPanel) == 1) {
+                    doMarkAsRead(false);
+                }
+            }
         }
     }
 
@@ -428,14 +478,68 @@ public class MainForm implements ActionListener {
      * Поставить или снять отметку "К прочтению"
      */
     private void doMarkAsMustRead() {
-        //To change body of created methods use File | Settings | File Templates.
+        doMark(1, true);
     }
 
     /**
      * Отметить или снять отметку "Прочитано"
+     *
+     * @param allowRemove Разрешать или нет снятие отметки
      */
-    private void doMarkAsRead() {
-        //To change body of created methods use File | Settings | File Templates.
+    private void doMarkAsRead(boolean allowRemove) {
+        doMark(0, allowRemove);
+    }
+
+    /**
+     * Снятие или установка отметки
+     *
+     * @param whatMark    0 - readed, 1 - mustRead
+     * @param allowRemove Разрешать или нет снятие отметки
+     */
+    private void doMark(int whatMark, boolean allowRemove) {
+        TreePath[] selection = booksTree.getSelectionPaths();
+        if ((selection != null) && (selection.length > 0)) {
+            // Поехали обрабатывать...
+            Session sess = null;
+            Transaction trx = null;
+            try {
+                mainPanel.setCursor(waitCursor);
+                sess = LibraryStorage.getSelectedLibrary().openSession();
+                trx = sess.beginTransaction();
+                for (TreePath el : selection) {
+                    if (DefaultMutableTreeNode.class.equals(el.getLastPathComponent().getClass())) {
+                        // Значит тут - вершина...
+                        if (Book.class.equals(((DefaultMutableTreeNode) el.getLastPathComponent()).getUserObject().getClass())) {
+                            // Значит - это еще и книга. Тогда точно поехали обрабатывать...
+                            Book book = (Book) ((DefaultMutableTreeNode) el.getLastPathComponent()).getUserObject();
+                            switch (whatMark) {
+                                case 0: {
+                                    if ((book.getReaded() == null) || (!book.getReaded())) book.setReaded(true);
+                                    else if (allowRemove) book.setReaded(false);
+                                    break;
+                                }
+                                case 1: {
+                                    if ((book.getMustRead() == null) || (!book.getMustRead())) book.setMustRead(true);
+                                    else if (allowRemove) book.setMustRead(false);
+                                    break;
+                                }
+                            }
+                            sess.update(book);
+                            ((DefaultTreeModel) booksTree.getModel()).nodeChanged((TreeNode) el.getLastPathComponent());
+                        }
+                    }
+                }
+                sess.flush();
+                trx.commit();
+                trx = null;
+                sess.close();
+                sess = null;
+            } finally {
+                if (trx != null) trx.rollback();
+                if (sess != null) sess.close();
+                mainPanel.setCursor(defCursor);
+            }
+        }
     }
 
     /**
@@ -562,7 +666,11 @@ public class MainForm implements ActionListener {
                 // У обеих серий нет
                 if ((o1.getTitle() != null))
                     // Сраниваем по титлу первой
-                    return o1.getTitle().compareTo(o2.getTitle());
+                    if (o1.getTitle().equals(o2.getTitle())) {
+                        // Если заголовки совпадают - сравниваем по идентификатору
+                        return (new Integer(o1.getId())).compareTo(new Integer(o2.getId()));
+                    } else
+                        return o1.getTitle().compareTo(o2.getTitle());
                 else
                     // У первой титлы нет - значит пусть она будет выше
                     return -1;
@@ -574,7 +682,7 @@ public class MainForm implements ActionListener {
                         // У первой есть номер в серии - сравниваем с ним
                         if (o2.getNumInSerie() != null)
                             if (o1.getNumInSerie().equals(o2.getNumInSerie())) {
-                                return o1.getId().compareTo(o2.getId());
+                                return (new Integer(o1.getId())).compareTo(new Integer(o2.getId()));
                             } else
                                 return o1.getNumInSerie().compareTo(o2.getNumInSerie());
                         else
@@ -606,6 +714,8 @@ public class MainForm implements ActionListener {
                     Book book = (Book) obj;
                     if ((book.getReaded() != null) && (book.getReaded())) {
                         setText("<html><b>" + book + "</b></html>");
+                    } else if ((book.getMustRead() != null) && (book.getMustRead())) {
+                        setText("<html><i>" + book + "</i></html>");
                     }
                 }
             }

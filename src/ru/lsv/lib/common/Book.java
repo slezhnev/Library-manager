@@ -139,23 +139,23 @@ public class Book {
     }
 
     public String formHTMLDescription() {
-        StringBuffer str = new StringBuffer("<html><b>Название:</b><br>");
+        StringBuffer str = new StringBuffer("<html><b>Название:</b>&nbsp;&nbsp;");
         if (title == null) str.append("Нет названия");
         else str.append(title);
-        str.append("<br><br>");
-        str.append("<b>Авторы</b>:<br>");
-        for (Author author : authors) {
-            str.append(author.makeName()).append("<br>");
-        }
-        str.append("<br><br>");
+        str.append("<br>");
         if (serieName != null) {
-            str.append("<b>Серия:</b><br>").append(serieName);
+            str.append("<b>Серия:</b>&nbsp;&nbsp;").append(serieName);
             str.append(" - ");
             if (numInSerie == null) str.append("б/н");
             else str.append(numInSerie);
             str.append("<br><br>");
         }
-        str.append("<b>Архив:</b><br>").append(zipFileName).append("<br><br>");
+        str.append("<b>Авторы</b>:<br>");
+        for (Author author : authors) {
+            str.append(author.makeName()).append("<br>");
+        }
+        str.append("<br>");
+        str.append("<b>Архив:</b><br>").append(zipFileName).append("<br>");
         str.append("<b>Имя файла:</b><br>").append(id);
         return str.toString();
     }
@@ -178,7 +178,7 @@ public class Book {
             if (numInSerie != null)
                 str.append(numInSerie);
             else
-                str.append("б/н");
+                str.append("нет");
             str.append(")");
         }
         return str.toString();
@@ -281,5 +281,22 @@ public class Book {
     public void setMustRead(Boolean mustRead) {
         this.mustRead = mustRead;
     }
+
+    /**
+     * Создает текстовое представление автора (или "Сборник", если авторов несколько)
+     * Используется при экспорте книг
+     *
+     * @return Текстовое представление автора/ов
+     */
+    public String getAuthorsToString() {
+        if (authors.size() >= 1) {
+            Author author = authors.get(0);
+            return author.makeName();
+        } else {
+            return "Без автора";
+        }
+    }
+
+
 }
 
