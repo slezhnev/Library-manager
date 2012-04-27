@@ -6,6 +6,7 @@ import ru.lsv.lib.common.Author;
 import ru.lsv.lib.common.Book;
 import ru.lsv.lib.library.Library;
 import ru.lsv.lib.library.LibraryStorage;
+import ru.lsv.lib.library.librusec.LibRusEcLibrary;
 import ru.lsv.lib.parsers.MHLUDParser;
 
 import javax.swing.*;
@@ -17,11 +18,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 import java.util.List;
+
+//TODO Сделать универсальную обработку uppercase названий и имен авторов!    
+
 
 /**
  * Основная форма приложения
@@ -52,6 +54,7 @@ public class MainForm implements ActionListener {
     private static final String markAsReadedMIText = "Отметить/снять отметку 'Прочитанное'";
     private static final String markAsMustReadMIText = "Отметить/снять отметку 'К прочтению'";
     private static final String copyToDeviceMIText = "Копировать для чтения";
+    private static final String openBookInBrowserMIText = "Открыть просмотр книги в браузере";
 
     public MainForm() {
         authorEdit.addActionListener(new ActionListener() {
@@ -323,7 +326,8 @@ public class MainForm implements ActionListener {
             // Добавляем библиотеку
             Library library = new Library("LibRusEc",
                     "I:/Torrents/Lib.Rus.Ec + MyHomeLib[FB2]/lib.rus.ec",
-                    "I:/Torrents/Lib.Rus.Ec + MyHomeLib[FB2]/librarian.data/librusec.db", 1);
+                    "I:/Torrents/Lib.Rus.Ec + MyHomeLib[FB2]/librarian.data/librusec.db", 1,
+                    "I:/Torrents/Lib.Rus.Ec + MyHomeLib[FB2]/librusec_local_fb2.inpx");
             LibraryStorage.addLibrary(library);
             doLibrarySelection(library);
         }
@@ -403,6 +407,11 @@ public class MainForm implements ActionListener {
         item.setAccelerator(KeyStroke.getKeyStroke("ctrl D"));
         item.addActionListener(this);
         menu.add(item);
+        menu.addSeparator();
+        item = new JMenuItem(openBookInBrowserMIText);
+        item.setAccelerator(KeyStroke.getKeyStroke("ctrl O"));
+        item.addActionListener(this);
+        menu.add(item);
         //
         menuBar.add(menu);
         //
@@ -428,6 +437,32 @@ public class MainForm implements ActionListener {
             filterByCategory();
         } else if (copyToDeviceMIText.equals(e.getActionCommand())) {
             doCopyToDevice();
+        } else if (openBookInBrowserMIText.equals(e.getActionCommand())) {
+            doOpenInBrowser();
+        }
+    }
+
+    /**
+     * Открывает просмотр выбранной книги к браузере
+     */
+    private void doOpenInBrowser() {
+        if (booksTree.getSelectionCount() == 1) {
+            if (DefaultMutableTreeNode.class.equals(booksTree.getSelectionPath().getLastPathComponent().getClass())) {
+                if (((DefaultMutableTreeNode)booksTree.getSelectionPath().getLastPathComponent()).getUserObject().getClass().equals(Book.class)) {
+                    // Это и правда книга!
+                    if (LibraryStorage.getSelectedLibrary().getLibraryRealization().getClass().equals(LibRusEcLibrary.class)) {
+                        // Значит текущая библиотека - либрусек
+                        Book book = (Book) ((DefaultMutableTreeNode)booksTree.getSelectionPath().getLastPathComponent()).getUserObject();
+                        try {
+                            Desktop.getDesktop().browse(java.net.URI.create("http://lib.rus.ec/b/"+book.getId()));
+                        } catch (IOException e) {
+                            JOptionPane.showMessageDialog(mainPanel, "Ошибка открытия браузера", "Открытие в браузере", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+                }
+            }
+        } else if (booksTree.getSelectionCount() > 1) {
+            JOptionPane.showMessageDialog(mainPanel, "Выбрано более одной книги", "Открытие в браузере", JOptionPane.WARNING_MESSAGE);
         }
     }
 

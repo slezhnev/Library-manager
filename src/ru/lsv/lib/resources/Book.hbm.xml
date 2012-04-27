@@ -27,6 +27,7 @@
         <property name="annotation" length="65000"/>
         <property name="readed"/>
         <property name="mustRead"/>
+        <property name="deletedInLibrary"/>
     </class>
 </hibernate-mapping>
 

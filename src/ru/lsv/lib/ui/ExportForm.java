@@ -157,7 +157,7 @@ public class ExportForm {
                         // Создаем место - куда сохранять...
                         final StringBuffer str = new StringBuffer(exportLocationEdit.getText() + File.separator + book.getAuthorsToString());
                         if (book.getSerieName() != null) {
-                            str.append(File.separator).append(book.getSerieName());
+                            str.append(File.separator).append(book.getSerieName().trim());
                         }
                         File outFile = new File(str.toString());
                         if ((!outFile.exists()) && (!outFile.mkdirs())) {
@@ -176,7 +176,7 @@ public class ExportForm {
                             return;
                         }
                         // Проверяем на наличие такого файла
-                        str.append(File.separator).append(book.toString()).append(".fb2.zip");
+                        str.append(File.separator).append(book.toString().trim()).append(".fb2.zip");
                         outFile = new File(str.toString());
                         if (outFile.exists() && (!outFile.delete())) {
                             try {

@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="40401adb-c902-4c1c-a1bb-c3ab88ba6359" name="Default" comment="fix">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/save_as_16_h.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/cross_16_h.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
     </list>
-    <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME_GRIFFON$/" />
     <ignored path="LibsProcessing.iws" />
+    <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,28 +121,28 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainForm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LibraryStorage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="58" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="107" selection-start="4594" selection-end="4594" vertical-scroll-proportion="0.354067">
+            <state line="205" column="28" selection-start="8407" selection-end="8415" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExportForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
+      <file leaf-file-name="INPRecord.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="279" column="78" selection-start="13517" selection-end="13517" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Book.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="72" selection-start="3395" selection-end="3395" vertical-scroll-proportion="0.0">
+            <state line="14" column="113" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,16 +151,16 @@
       <file leaf-file-name="Author.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="36" selection-start="2943" selection-end="2943" vertical-scroll-proportion="0.0">
+            <state line="13" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FB2ZipFileParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
+      <file leaf-file-name="ExportForm.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="2518" selection-end="2648" vertical-scroll-proportion="0.0">
+            <state line="224" column="67" selection-start="10957" selection-end="10957" vertical-scroll-proportion="0.03125">
               <folding />
             </state>
           </provider>
@@ -182,22 +180,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryDiffListener.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/FileEntity.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/MHLUDParser.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.form" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
       </list>
     </option>
   </component>
@@ -253,6 +251,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
@@ -320,10 +319,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProcessNewBooksForm" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -516,12 +511,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="210" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="238" />
     <property name="OverrideImplement.combined" value="true" />
@@ -563,14 +557,14 @@
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="ru.lsv.lib.ui.MainForm" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\JavaProjects\Librarian\src\ru\lsv\lib\resources" />
+      <recent name="F:\Lsv\JavaProjects\LibsProcessing\src\ru\lsv\lib\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ru.lsv.lib.common" />
       <recent name="ru.lsv.lib.genres" />
       <recent name="ru.lsv.lib.common.genres" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\JavaProjects\Librarian\src\ru\lsv\lib\resources" />
-      <recent name="F:\Lsv\JavaProjects\LibsProcessing\src\ru\lsv\lib\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainClass">
@@ -758,21 +752,21 @@
     <frame x="1" y="0" width="1678" height="1020" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902032" sideWeight="0.666287" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2624769" sideWeight="0.666287" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39749432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20825632" sideWeight="0.33143508" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19901417" sideWeight="0.22665147" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20825632" sideWeight="0.6640091" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24152803" sideWeight="0.667426" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257403" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32460135" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959503" sideWeight="0.6624424" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902032" sideWeight="0.666287" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -820,14 +814,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" />
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/hibernate.jar!/org/hibernate/exception/SQLStateConverter.class">
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.5964912" />
+        <state line="78" column="0" selection-start="2518" selection-end="2648" vertical-scroll-proportion="0.32079905" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/library.cfg.xml">
@@ -837,73 +831,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="15" column="35" selection-start="544" selection-end="544" vertical-scroll-proportion="0.45617172" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/HibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="-0.18604651" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="93" selection-end="93" vertical-scroll-proportion="0.15205725" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="8" selection-start="1826" selection-end="1826" vertical-scroll-proportion="-3.1055455" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="226" selection-end="226" vertical-scroll-proportion="0.17889088" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="13" selection-start="520" selection-end="520" vertical-scroll-proportion="-0.18067978" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="49" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.519389" />
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.6.0_18/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1164" column="15" selection-start="44422" selection-end="44422" vertical-scroll-proportion="0.33254993" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="2043" selection-end="2112" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.6.0_18/src.zip!/java/io/FileSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="28" selection-start="4608" selection-end="4608" vertical-scroll-proportion="0.33254993" />
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.6.0_18/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="882" column="20" selection-start="35915" selection-end="35915" vertical-scroll-proportion="0.39247945" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="36" selection-start="2943" selection-end="2943" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="2518" selection-end="2648" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="279" column="78" selection-start="13517" selection-end="13517" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="29" column="43" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.881932" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="72" selection-start="3395" selection-end="3395" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="129" column="18" selection-start="2426" selection-end="2426" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="58" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="107" selection-start="4594" selection-end="4594" vertical-scroll-proportion="0.354067">
-          <folding />
-        </state>
+        <state line="205" column="28" selection-start="8407" selection-end="8415" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="113" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="224" column="67" selection-start="10957" selection-end="10957" vertical-scroll-proportion="0.03125" />
       </provider>
     </entry>
   </component>

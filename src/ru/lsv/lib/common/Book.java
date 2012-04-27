@@ -77,6 +77,11 @@ public class Book {
      */
     private Boolean mustRead;
 
+    /**
+     * Отметка о том, что книга удалена в библиотеке
+     */
+    private Boolean deletedInLibrary;
+
 
     public Book() {
         authors = new ArrayList<Author>();
@@ -157,6 +162,9 @@ public class Book {
         str.append("<br>");
         str.append("<b>Архив:</b><br>").append(zipFileName).append("<br>");
         str.append("<b>Имя файла:</b><br>").append(id);
+        if ((deletedInLibrary != null)&&(deletedInLibrary)) {
+            str.append("<b>УДАЛЕНА В БИБЛИОТЕКЕ</b><br>");
+        }
         return str.toString();
     }
 
@@ -291,12 +299,19 @@ public class Book {
     public String getAuthorsToString() {
         if (authors.size() >= 1) {
             Author author = authors.get(0);
-            return author.makeName();
+            return author.makeName().trim();
         } else {
             return "Без автора";
         }
     }
 
 
+    public Boolean getDeletedInLibrary() {
+        return deletedInLibrary;
+    }
+
+    public void setDeletedInLibrary(Boolean deletedInLibrary) {
+        this.deletedInLibrary = deletedInLibrary;
+    }
 }
 

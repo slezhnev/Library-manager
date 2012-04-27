@@ -58,14 +58,21 @@ public class Library {
      */
     private Integer libraryKind;
 
-    public Library(String name, String storagePath, String dbPath, Integer libraryKind) {
+    /**
+     * Ссылка на inpx файл библиотеки
+     */
+    private String inpxPath;
+
+    public Library(String name, String storagePath, String dbPath, Integer libraryKind, String inpxPath) {
         this.name = name;
         this.storagePath = storagePath;
         this.dbPath = dbPath;
         this.libraryKind = libraryKind;
+        this.inpxPath = inpxPath;
     }
 
     public Library() {
+        
     }
 
     public Integer getLibraryId() {
@@ -165,6 +172,7 @@ public class Library {
 
     /**
      * Получение реализации библиотеки
+     *
      * @return Реализация
      */
     public LibraryRealization getLibraryRealization() {
@@ -181,8 +189,16 @@ public class Library {
 
     @Override
     public String toString() {
-        return "library: id="+libraryId+", name="+name+", storagePath=" +storagePath+
-                ", dbPath="+dbPath+", kind="+libraryKind+", initialized="+((libraryFactory == null) ? "no" : "yes")+
-                ", realizationClassName="+(libraryRealization == null ? "no" : libraryRealization.getClass().getName());
+        return "library: id=" + libraryId + ", name=" + name + ", storagePath=" + storagePath +
+                ", dbPath=" + dbPath + ", kind=" + libraryKind + ", inpxPath=" + inpxPath + ", initialized=" + ((libraryFactory == null) ? "no" : "yes") +
+                ", realizationClassName=" + (libraryRealization == null ? "no" : libraryRealization.getClass().getName());
+    }
+
+    public String getInpxPath() {
+        return inpxPath;
+    }
+
+    public void setInpxPath(String inpxPath) {
+        this.inpxPath = inpxPath;
     }
 }

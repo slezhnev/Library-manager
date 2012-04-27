@@ -13,6 +13,7 @@
         <property name="storagePath"/>
         <property name="dbPath"/>
         <property name="libraryKind"/>
+        <property name="inpxPath"/>
     </class>
 </hibernate-mapping>
 
