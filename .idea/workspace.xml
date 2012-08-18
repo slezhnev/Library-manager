@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="40401adb-c902-4c1c-a1bb-c3ab88ba6359" name="Default" comment="fix">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
     </list>
-    <ignored path="$USER_HOME_GRIFFON$/" />
     <ignored path="LibsProcessing.iws" />
+    <ignored path="$USER_HOME_GRIFFON$/" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +44,32 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/MHLUDParser.java" line="26" class="ru.lsv.lib.parsers.MHLUDParser" package="ru.lsv.lib.parsers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" line="141" class="ru.lsv.lib.ui.ExportForm$4" package="ru.lsv.lib.ui">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" line="205" class="ru.lsv.lib.ui.ExportForm$4" package="ru.lsv.lib.ui">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -110,8 +130,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="exception_breakpoints_groupByClasses" value="true" />
+      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -157,10 +177,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExportForm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ExportForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="67" selection-start="10957" selection-end="10957" vertical-scroll-proportion="0.03125">
+            <state line="179" column="68" selection-start="7923" selection-end="7923" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="81" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.8492647">
               <folding />
             </state>
           </provider>
@@ -180,7 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/FileEntity.java" />
@@ -196,6 +224,7 @@
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java" />
       </list>
     </option>
   </component>
@@ -251,8 +280,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -511,20 +539,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="210" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="238" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="238" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="232" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="234" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="905" />
@@ -546,8 +575,8 @@
     <property name="options.lastSelected" value="Errors" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -762,11 +791,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19901417" sideWeight="0.22665147" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24152803" sideWeight="0.667426" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2051756" sideWeight="0.667426" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32460135" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959503" sideWeight="0.6624424" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902032" sideWeight="0.666287" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959503" sideWeight="0.6624424" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -839,11 +868,6 @@
         <state line="14" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="-0.18604651" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="93" selection-end="93" vertical-scroll-proportion="0.15205725" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="8" selection-start="1826" selection-end="1826" vertical-scroll-proportion="-3.1055455" />
@@ -891,7 +915,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="67" selection-start="10957" selection-end="10957" vertical-scroll-proportion="0.03125" />
+        <state line="179" column="68" selection-start="7923" selection-end="7923" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="81" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.8492647">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

@@ -1,6 +1,7 @@
 package ru.lsv.lib.ui;
 
 import ru.lsv.lib.common.Book;
+import ru.lsv.lib.common.Utils;
 import ru.lsv.lib.library.Library;
 import ru.lsv.lib.library.LibraryStorage;
 
@@ -155,9 +156,9 @@ public class ExportForm {
                         return;
                     } else {
                         // Создаем место - куда сохранять...
-                        final StringBuffer str = new StringBuffer(exportLocationEdit.getText() + File.separator + book.getAuthorsToString());
+                        final StringBuffer str = new StringBuffer(exportLocationEdit.getText() + File.separator + Utils.cleanFileName(book.getAuthorsToString()));
                         if (book.getSerieName() != null) {
-                            str.append(File.separator).append(book.getSerieName().trim());
+                            str.append(File.separator).append(Utils.cleanFileName(book.getSerieName().trim()));
                         }
                         File outFile = new File(str.toString());
                         if ((!outFile.exists()) && (!outFile.mkdirs())) {
@@ -176,7 +177,7 @@ public class ExportForm {
                             return;
                         }
                         // Проверяем на наличие такого файла
-                        str.append(File.separator).append(book.toString().trim()).append(".fb2.zip");
+                        str.append(File.separator).append(Utils.cleanFileName(book.toString().trim())).append(".fb2.zip");
                         outFile = new File(str.toString());
                         if (outFile.exists() && (!outFile.delete())) {
                             try {
