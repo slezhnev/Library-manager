@@ -7,10 +7,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
+import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -50,11 +47,13 @@ public class FB2ZipFileParser {
      * где XXXXXXX - цифровой код книги, который будет сохранен в базу
      *
      * @param pathToFile Имя файла архива для обработки
+     * @param inpRecords Список записей inp из INPX файла (может быть null) <br/>
+     *                   Если есть - то данные по книге будут пытаться браться из него
      * @return Сформированный список книг в этом архиве
      * @throws IOException              В случае проблем с чтением архива
      * @throws java.text.ParseException В случае, если возникают проболемы с парсингом имени файла в архиве или самой книги
      */
-    public List<Book> parseZipFile(String pathToFile) throws IOException , ParseException {
+    public List<Book> parseZipFile(String pathToFile, Map<String, INPRecord> inpRecords) throws IOException, ParseException {
         ZipFile zip = new ZipFile(pathToFile);
         int totalFiles = 0;
         for (Enumeration e = zip.entries(); e.hasMoreElements();) {
@@ -75,15 +74,28 @@ public class FB2ZipFileParser {
                 // Пробуем парсить наименование книги
                 String name = ze.getName();
                 String id;
-                id = name.substring(0, name.indexOf("."));
+                id = name.substring(0, name.indexOf(".")).trim();
                 try {
-                    // Парсим книгу
-                    Book book = bp.parseFB2Stream(zip.getInputStream(ze), id, fileName, ze.getCrc());
+                    Book book = null;
+                    // Проверяем - работаем ли мы с INPX и есть ли в ем книга
+                    if ((inpRecords != null) && (inpRecords.containsKey(id))) {
+                        // Не совсем прямо, конечно
+                        // При парсинге FB2 это все формируется в parseFB2Stream
+                        book = new Book();
+                        book.setId(id);
+                        book.setZipFileName(fileName);
+                        book.setCrc32(ze.getCrc());
+                        // Заполняем параметры книги
+                        book = inpRecords.get(id).fillBookFrom(book);
+                    } else {
+                        // Парсим книгу
+                        book = bp.parseFB2Stream(zip.getInputStream(ze), id, fileName, ze.getCrc());
+                    }
                     if (book != null) res.add(book);
                     else {
                         for (FileParserListener listener : listeners) {
                             listener.inArchiveFileParseFailed(name);
-                        }                        
+                        }
                     }
                     // Поехали отфигарим по листенерам
                     for (FileParserListener listener : listeners) {

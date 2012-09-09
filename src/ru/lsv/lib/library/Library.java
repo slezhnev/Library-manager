@@ -171,6 +171,16 @@ public class Library {
     }
 
     /**
+     * Создание stateless сессии для работы с БД библиотеки
+     *
+     * @return Созданная stateless сессия или null, если не был вызван prepare или в процессе его работы были проблемы
+     */
+    public StatelessSession openStatelessSession() {
+        if (libraryFactory == null) return null;
+        return libraryFactory.openStatelessSession();
+    }
+
+    /**
      * Получение реализации библиотеки
      *
      * @return Реализация

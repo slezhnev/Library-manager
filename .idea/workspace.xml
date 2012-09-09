@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="40401adb-c902-4c1c-a1bb-c3ab88ba6359" name="Default" comment="fix">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/juniversalchardet-1.0.3.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPXParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/commons-io-2.4.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LibsProcessing.iml" afterPath="$PROJECT_DIR$/LibsProcessing.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test.java" afterPath="$PROJECT_DIR$/src/Test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.form" afterPath="$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.form" />
     </list>
-    <ignored path="LibsProcessing.iws" />
     <ignored path="$USER_HOME_GRIFFON$/" />
+    <ignored path="LibsProcessing.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,60 +40,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/Test.java" line="41" class="Test" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/MHLUDParser.java" line="26" class="ru.lsv.lib.parsers.MHLUDParser" package="ru.lsv.lib.parsers">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" line="141" class="ru.lsv.lib.ui.ExportForm$4" package="ru.lsv.lib.ui">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" line="205" class="ru.lsv.lib.ui.ExportForm$4" package="ru.lsv.lib.ui">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -130,8 +87,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="field_breakpoints_viewId" value="TABLE" />
+      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -141,55 +98,73 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LibraryStorage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="58" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="28" selection-start="8407" selection-end="8415" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="INPRecord.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="113" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0">
+            <state line="28" column="153" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Author.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java">
+      <file leaf-file-name="INPXParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPXParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0">
+            <state line="59" column="0" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExportForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
+      <file leaf-file-name="Book.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="68" selection-start="7923" selection-end="7923" vertical-scroll-proportion="0.0">
+            <state line="34" column="49" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java">
+      <file leaf-file-name="LibRusEcLibrary.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="81" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.8492647">
+            <state line="122" column="41" selection-start="4924" selection-end="4924" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FB2ZipFileParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="89" column="100" selection-start="3459" selection-end="3459" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FB2BookParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="16" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LibraryUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="26" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessNewBooksForm.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="124" column="0" selection-start="4823" selection-end="4823" vertical-scroll-proportion="0.16666667">
               <folding />
             </state>
           </provider>
@@ -209,22 +184,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/FileEntity.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/MHLUDParser.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.form" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java" />
         <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPXParser.java" />
+        <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/Author.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/resources/library.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.form" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java" />
+        <option value="$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.java" />
       </list>
     </option>
   </component>
@@ -280,7 +255,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,247 +288,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainForm" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExportForm" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="librusec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="genres" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Librarian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="210" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="238" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="232" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="232" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="234" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="905" />
@@ -575,8 +326,8 @@
     <property name="options.lastSelected" value="Errors" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -678,7 +429,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="snapshooter" />
       <option name="MAIN_CLASS_NAME" value="MainClass" />
-      <option name="VM_PARAMETERS" value="-Dsettings=$PROJECT_DIR$/libsprocessing.properties" />
+      <option name="VM_PARAMETERS" value="-Dsettings=$PROJECT_DIR$/libsprocessing.properties -Xms128m -Xmx512m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -781,20 +532,20 @@
     <frame x="1" y="0" width="1678" height="1020" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902032" sideWeight="0.666287" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21133703" sideWeight="0.14806378" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2624769" sideWeight="0.666287" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39749432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39635536" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19901417" sideWeight="0.22665147" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21749847" sideWeight="0.20615034" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2051756" sideWeight="0.667426" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23290204" sideWeight="0.7927107" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32460135" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902032" sideWeight="0.666287" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19931664" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959503" sideWeight="0.6624424" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -843,69 +594,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="2518" selection-end="2648" vertical-scroll-proportion="0.32079905" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/library.cfg.xml">
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/Library.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="544" selection-end="544" vertical-scroll-proportion="0.45617172" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/HibernateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="-0.18604651" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/Library.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="8" selection-start="1826" selection-end="1826" vertical-scroll-proportion="-3.1055455" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="226" selection-end="226" vertical-scroll-proportion="0.17889088" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="520" selection-end="520" vertical-scroll-proportion="-0.18067978" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/Book.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="43" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.881932" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="18" selection-start="2426" selection-end="2426" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="58" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" />
+        <state line="179" column="8" selection-start="4750" selection-end="4750" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="28" selection-start="8407" selection-end="8415" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="113" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0" />
+        <state line="758" column="76" selection-start="30923" selection-end="30923" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Author.java">
@@ -913,16 +614,72 @@
         <state line="13" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ExportForm.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/Author.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="68" selection-start="7923" selection-end="7923" vertical-scroll-proportion="0.0">
+        <state line="11" column="36" selection-start="397" selection-end="397" vertical-scroll-proportion="0.27952167" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/resources/library.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="44" selection-start="961" selection-end="961" vertical-scroll-proportion="0.38116592" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="49" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/librusec/LibRusEcLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="41" selection-start="4924" selection-end="4924" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2BookParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="16" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/library/LibraryUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="26" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/FB2ZipFileParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="100" selection-start="3459" selection-end="3459" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/common/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.6.0_18/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="81" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.8492647">
+        <state line="364" column="29" selection-start="17907" selection-end="17907" vertical-scroll-proportion="0.33263597">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPXParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="0" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/parsers/INPRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="153" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/lsv/lib/ui/ProcessNewBooksForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="0" selection-start="4823" selection-end="4823" vertical-scroll-proportion="0.16666667">
           <folding />
         </state>
       </provider>

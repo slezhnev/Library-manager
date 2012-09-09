@@ -448,13 +448,13 @@ public class MainForm implements ActionListener {
     private void doOpenInBrowser() {
         if (booksTree.getSelectionCount() == 1) {
             if (DefaultMutableTreeNode.class.equals(booksTree.getSelectionPath().getLastPathComponent().getClass())) {
-                if (((DefaultMutableTreeNode)booksTree.getSelectionPath().getLastPathComponent()).getUserObject().getClass().equals(Book.class)) {
+                if (((DefaultMutableTreeNode) booksTree.getSelectionPath().getLastPathComponent()).getUserObject().getClass().equals(Book.class)) {
                     // Это и правда книга!
                     if (LibraryStorage.getSelectedLibrary().getLibraryRealization().getClass().equals(LibRusEcLibrary.class)) {
                         // Значит текущая библиотека - либрусек
-                        Book book = (Book) ((DefaultMutableTreeNode)booksTree.getSelectionPath().getLastPathComponent()).getUserObject();
+                        Book book = (Book) ((DefaultMutableTreeNode) booksTree.getSelectionPath().getLastPathComponent()).getUserObject();
                         try {
-                            Desktop.getDesktop().browse(java.net.URI.create("http://lib.rus.ec/b/"+book.getId()));
+                            Desktop.getDesktop().browse(java.net.URI.create("http://lib.rus.ec/b/" + book.getId()));
                         } catch (IOException e) {
                             JOptionPane.showMessageDialog(mainPanel, "Ошибка открытия браузера", "Открытие в браузере", JOptionPane.ERROR_MESSAGE);
                         }
@@ -747,11 +747,19 @@ public class MainForm implements ActionListener {
                 Object obj = ((DefaultMutableTreeNode) value).getUserObject();
                 if ((obj != null) && (obj.getClass().equals(Book.class))) {
                     Book book = (Book) obj;
+                    StringBuffer res = new StringBuffer("");
                     if ((book.getReaded() != null) && (book.getReaded())) {
-                        setText("<html><b>" + book + "</b></html>");
+                        res.append("<b>" + book + "</b>");
                     } else if ((book.getMustRead() != null) && (book.getMustRead())) {
-                        setText("<html><i>" + book + "</i></html>");
+                        res.append("<i>" + book + "</i>");
+                    } else {
+                        res.append("" + book);
                     }
+                    if ((book.getDeletedInLibrary() != null) && (book.getDeletedInLibrary())) {
+                        res.insert(0, "<font color=red>").append("</font>");
+                    }
+                    res.insert(0, "<html>").append("</html");
+                    setText(res.toString());
                 }
             }
             return this;

@@ -8,9 +8,12 @@ import ru.lsv.lib.common.FileEntity;
 import ru.lsv.lib.library.*;
 import ru.lsv.lib.parsers.FB2ZipFileParser;
 import ru.lsv.lib.parsers.FileParserListener;
+import ru.lsv.lib.parsers.INPRecord;
+import ru.lsv.lib.parsers.INPXParser;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -92,13 +95,23 @@ public class LibRusEcLibrary implements LibraryRealization {
         //
         zipParser.addListener(fileListener);
         boolean hasFailed = false;
+        Map<String, INPRecord> inpRecords = null;
+        if ((LibraryStorage.getSelectedLibrary().getInpxPath() != null) &&
+                (LibraryStorage.getSelectedLibrary().getInpxPath().length() > 0)) {
+            // Пробуем загрузить INPX-файл
+            try {
+                inpRecords = new INPXParser(LibraryStorage.getSelectedLibrary().getInpxPath()).getRecords();
+            } catch (IOException e) {
+                inpRecords = null;
+            }
+        }
         for (String file : newFiles) {
             try {
                 // fire listener
                 if (diffListener != null) diffListener.beginNewFile(file);
                 // Формируем список книг
                 File fl = new File(library.getStoragePath() + File.separatorChar + file);
-                List<Book> books = zipParser.parseZipFile(library.getStoragePath() + File.separatorChar + file);
+                List<Book> books = zipParser.parseZipFile(library.getStoragePath() + File.separatorChar + file, inpRecords);
                 // Сохраняем
                 // Дата и время добавления. Для одного диффа - оно одинаково
                 if (diffListener != null) diffListener.fileProcessSavingBooks(file);

@@ -6,7 +6,13 @@ import ru.lsv.lib.library.LibraryDiffListener;
 import ru.lsv.lib.library.LibraryStorage;
 import ru.lsv.lib.library.LibraryUtils;
 import ru.lsv.lib.parsers.FileParserListener;
+import ru.lsv.lib.parsers.INPRecord;
+import ru.lsv.lib.parsers.INPXParser;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -18,31 +24,14 @@ import java.util.List;
  */
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, INPRecord.BadINPRecord {
 
-        // Создадим Library одну для теста
-        //Library library = new Library("LibRusEc local", "h:/javaprojects/librarian/test.lib", "h:/javaprojects/librarian/librusec.db", 1);
-        //System.out.println("add result - " + LibraryStorage.addLibrary(library) + "\n");
+        INPXParser inpxp = new INPXParser("I:\\Torrents\\Lib.Rus.Ec + MyHomeLib[FB2]\\librusec_local_fb2.inpx" );
 
-        List<Library> libraries = LibraryStorage.getLibraries();
-        for (Library library1 : libraries) {
-            System.out.println("" + library1 + "\n");
+        // А поедем напечатаем!
+        for (String name : inpxp.getRecords().keySet()) {
+            System.out.println("key: " + name + ", val: " + inpxp.getRecords().get(name));
         }
-
-        if (LibraryStorage.selectLibrary(LibraryStorage.getLibraries().get(0).getLibraryId()) != 0) {
-            System.out.println("Library select failed!\n");
-            return;
-        }
-
-        System.out.println("new books? : "+LibraryStorage.getSelectedLibrary().getLibraryRealization().IsNewBooksPresent()+"\n");
-
-        Author tmp = new Author();
-        tmp.setLastName("Панов");
-        tmp.setFirstName("Вадим");
-        tmp = LibraryUtils.getAuthorFromDB(tmp);
-
-        LibraryStorage.shutdownSelectedLibrary();
-        LibraryStorage.shutdownStorage();        
     }
 
 }

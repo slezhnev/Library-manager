@@ -163,7 +163,7 @@ public class Book {
         str.append("<b>Архив:</b><br>").append(zipFileName).append("<br>");
         str.append("<b>Имя файла:</b><br>").append(id);
         if ((deletedInLibrary != null)&&(deletedInLibrary)) {
-            str.append("<b>УДАЛЕНА В БИБЛИОТЕКЕ</b><br>");
+            str.append("<br><br><b>УДАЛЕНА В БИБЛИОТЕКЕ</b><br>");
         }
         return str.toString();
     }

@@ -36,6 +36,8 @@
     <orderEntry type="library" name="JGoodies Looks" level="project" />
     <orderEntry type="library" name="JGoodies Forms" level="project" />
     <orderEntry type="library" name="Apache Commons Lang 2.6" level="project" />
+    <orderEntry type="library" name="Apache Commons IO 2.4" level="project" />
+    <orderEntry type="library" name="juniversalchardet 1.0.3" level="project" />
   </component>
 </module>
 
